@@ -1,5 +1,6 @@
 {
-  "name": "untitled",
+  "name": "users-list",
+  "homepage": "http://vmishchenko.github.io/Yalantis_users_list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +15,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint-js": "eslint --ext .jsx,.js ./src/ --fix",
+    "lint-css": "stylelint src/**/*.css src/**/*.scss --fix",
+    "lint": "npm run lint-js && npm run lint-css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
